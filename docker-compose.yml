@@ -1,48 +1,48 @@
-versión : " 3.1 "
+versión : " 3.2 "
 
 volúmenes :
      mongodb : ~
 
 Servicios :
      iotagent :
-         imagen : fiware / iotagent-JSON 
-        nombre de host : iotagent 
-        CONTAINER_NAME : fiware-iotagent 
+         imagen : fiware / iotagent-JSON
+        nombre de host : iotagent
+        CONTAINER_NAME : fiware-iotagent
         depends_on :
-            - mongodb 
+            - mongodb
         exponer :
-            - Puertos " 4041 " 
+            - Puertos " 4041 "
             - " 7896 "
          :
-            - " 4041: 4041 " 
+            - " 4041: 4041 "
             - " 7896: 7896 "
          entorno :
-            - " IOTA_CB_HOST = orion " 
-            - " IOTA_CB_PORT = 1026 " 
-            - " IOTA_NORTH_PORT = 4041 " 
-            - " IOTA_REGISTRY_TYPE = mongodb " 
-            - " IOTA_MONGO_HOST = mongodb " 
-            - " IOTA_MONGO_PORT = 27017 " 
-            - " IOTA_MONGO_PORT = 27017 " 
-            - " IOTA_DOTA_son " 
+            - " IOTA_CB_HOST = orion "
+            - " IOTA_CB_PORT = 1026 "
+            - " IOTA_NORTH_PORT = 4041 "
+            - " IOTA_REGISTRY_TYPE = mongodb "
+            - " IOTA_MONGO_HOST = mongodb "
+            - " IOTA_MONGO_PORT = 27017 "
+            - " IOTA_MONGO_PORT = 27017 "
+            - " IOTA_DOTA_son "
             - " IOTA_PROVIDER_URL = http: // iot-agent:4041 "
 
     mongodb :
-         imagen : mongo: 4,2 
-        hostname : mongodb 
-        CONTAINER_NAME : db-mongo 
+         imagen : mongo: 4,2
+        hostname : mongodb
+        CONTAINER_NAME : db-mongo
         puertos :
             - " 27017: 27017 "
-         comando : --bind_ip_all --smallfiles 
+         comando : --bind_ip_all --smallfiles
         volúmenes :
             - mongodb: / datos
 
     Orion :
-         la imagen : fiware / Orion 
-        nombre de host : Orion 
-        CONTAINER_NAME : fiware-Orion 
+         la imagen : fiware / Orion
+        nombre de host : Orion
+        CONTAINER_NAME : fiware-Orion
         depends_on :
-            - mongodb 
+            - mongodb
         exponer :
             - Puertos " 1026 "
          :
