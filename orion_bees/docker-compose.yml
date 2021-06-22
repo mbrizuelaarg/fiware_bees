@@ -1,8 +1,8 @@
-version: "3.9"
+version: "3"
 
 services:
   orion:
-    image: fiware/orion
+    image: orion:latest
     ports:
       - "1026:1026"
     depends_on:
